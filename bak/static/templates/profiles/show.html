@@ -1,0 +1,93 @@
+{% extends "index.html" %}
+
+{% block body %}
+{% autoescape on %}
+    <noscript>You don't have Javascript enabled. Some features will be disabled.</noscript>
+    <table id="platform">
+        <tr>
+            <th>Operating System</th>
+            <td id="os">{{ profile.os }}</td>
+        </tr>
+
+        <tr>
+            <th>IP</th>
+            <td>{{ profile.ip }}</td>
+        </tr>
+
+        <tr>
+            <th>Screen Resolution</th>
+            <td id="screen_resolution">{{ profile.screen_resolution }}</td>
+        </tr>
+
+        <tr>
+            <th>Connection Speed</th>
+            <td id="connection_speed">{{ profile.connection_speed }}</td>
+        </tr>
+
+        <tr>
+            <th>Browser</td>
+            <td id="browser">{{ profile.browser }}</td>
+        </tr>
+        <tr>
+            <th>Is Mobile</th>
+            <td>{{ profile.is_mobile }}</td>
+        </tr>
+        <tr>
+            <th>Javascript</th>
+            <td id="javascript">
+                {% if profile.javascript %}
+                    Version {{ profile.javascript_version }}
+                {% else %}
+                    {{ profile.javascript }}
+                {% endif %}
+            </td>
+
+        </tr>
+        <tr>
+            <th>AJAX</th>
+            <td id="ajax">{% if profile.ajax %}Yes{% else %}No{% endif %}</td>
+        </tr>
+        <tr>
+            <th>CSS</th>
+            <td>
+                {% if profile.css %}
+                    Version {{ profile.css_version }}
+                {% else %}
+                    {{ profile.css }}
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Flash</th>
+            <td id="flash">{{ profile.flash }}</td>
+        </tr>
+        <tr>
+            <th>Cookies</th>
+            <td id="cookies">{{ profile.cookies }}</td>
+        </tr>
+
+        <tr>
+            <th>Is Mobile</th>
+            <td>{{ profile.is_mobile }}</td>
+        </tr>
+
+    </table>
+
+    {% if not profile.updated %}
+        {% include "profiles/jsver.html" %}
+        <script type="text/javascript" src="/media/js/json2.js"></script>
+        <script type="text/javascript" src="/media/js/jquery.js"></script>
+        <script type="text/javascript" src="/media/js/browserdetect.js"></script>
+        <script type="text/javascript" src="/media/js/flash.js"></script>
+        <script type="text/javascript" src="/media/js/connection_speed.js"></script>
+        <script type="text/javascript" src="/media/js/profiler.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                profiler.start();
+            });
+        </script>
+    {% endif %}
+
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,17 @@
+Send user information to an e-mail address
+
+debugmyusers.com/rentacarnow
+
+debugmyusers.com/x23k3
+
+Send user comments
+Screencapture
+
+Standard browser data
+ Flash
+ Javascript
+ User Agent
+ Referrer?
+ Device
+
+Do browser and device detection

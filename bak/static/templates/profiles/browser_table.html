@@ -1,0 +1,14 @@
+{% load getattr %}
+
+<table id="browser_data">
+    {% for key, val in info %}
+        <tr>
+            <th>{{ key }}</th>
+            <td>{{ val }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% for key, val in profile.data.iteritems %}
+	<strong>{{ key|title }}</strong> {{ val }}<br />
+{% endfor %}

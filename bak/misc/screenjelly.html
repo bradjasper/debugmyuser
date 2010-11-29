@@ -1,0 +1,23 @@
+<script type="text/javascript">
+var protocol = (document.location.protocol == 'https:') ? 'https:' : 'http:';
+document.write(unescape("%3Cscript src='"+ protocol +"//www.screenjelly.com/widget/recorder.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<div id="videoURL">VIDEO URL</div>
+<div id="videoEmbed">VIDEO EMBED</div>
+
+
+<script type="text/javascript">
+recorder.onSuccess = function(video) {
+
+    alert("success");
+
+    // adds link
+    document.getElementById('videoUrl').innerHTML = video.getPageLink();
+    // adds embed code
+    document.getElementById('videoEmbed').innerHTML = video.getEmbedCode();
+}
+recorder.onCancel = function() {
+    alert("Why didn't you record your screen?");
+}
+</script> 
