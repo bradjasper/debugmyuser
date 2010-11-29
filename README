@@ -1,4 +1,18 @@
-debugmyuser
+debugmyuser.com
+
+Source code to debugmyuser.com
+
+@what
+
+Learn more about your users and their browser, like:
+  ~ User Agent
+  ~ Browser
+  ~ IP
+  ~ Javascript
+  ~ Flash
+  ~ CSS
+  ~ Cookies
+  ~ and more...
 
 @todo
  ~ Implement SupportedAgent/EnabledAgent vs FrontendAgent/BackendAgent
